@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Customers</h1>
+
+<div>
+  <h5 style="display: inline-block">If you want to make a massive load:</h5> <%= link_to "Upload Excel file", upload_customers_path %>
+</div>
+
+<div>
+  <h5 style="display: inline-block">If you want to "process" data:</h5> <%= link_to "Process all", randomize_customers_path %>
+</div>
+
+<div>
+  <h5 style="display: inline-block">If you want to clear records:</h5> <%= link_to "Delete all", clear_customers_path %>
+</div>
+
+<br/>
+
+<div id="customers">
+  <% @customers.each do |customer| %>
+    <%= render customer %>
+    <p>
+      <%= link_to "Show this customer", customer %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New customer", new_customer_path %>

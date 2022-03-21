@@ -1,0 +1,15 @@
+<h1>Massive load</h1>
+
+<%=form_tag(import_customers_path, :multipart => true) %>
+
+<%= label_tag 'File: ' %>
+<%= file_field_tag 'excel_file', :required => 'true', :accept => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel' %>
+
+<br/>
+
+<%= submit_tag "Upload this file" %>
+
+<br>
+<div>
+  <%= link_to "Back to customers", customers_path %>
+</div>
